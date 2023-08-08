@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { HStack, Icon, Text } from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
 import { Platform } from "../hooks/useGames";
 import {
   FaWindows,
@@ -34,9 +34,11 @@ const PlatformiconList = ({ platforms }: Props) => {
     <HStack marginY={1}>
       {platforms.map((platform) => {
         return (
-          <Text key={platform.name}>
-            <Icon as={iconMap[platform.slug]} color="gray.500" />
-          </Text>
+          <Icon
+            as={iconMap[platform.slug]}
+            color="gray.500"
+            key={platform.name}
+          />
         );
       })}
     </HStack>
